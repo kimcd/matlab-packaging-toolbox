@@ -3,7 +3,6 @@ classdef SRS
     properties
         frequencies
         accelerations
-        mv
     end
 
     properties(Constant)
@@ -14,25 +13,17 @@ classdef SRS
         function obj = SRS(f, g)
             obj.frequencies = f;
             obj.accelerations = g;
-            obj.mv = get_modal_velocity(obj); 
         end
-
 
         function plot_handle = plot_SRS(obj)
-
-            [fig_handle, axs_handle] = generate_figure_axes();
-            
-            plot_handle = loglog(axs_handle, ...
-                obj.frequencies, ...
-                obj.accelerations); 
-
-            grid(axs_handle,'on')
+            axs_handle = plot_something(obj);
+            plot_handle = plot(axs_handle, obj.frequencies, obj.accelerations); 
 
         end
 
 
-        function mv = get_modal_velocity(obj)
-            mv = modalVelocity(obj.frequencies, obj.accelerations);
+        function mv = get_modal_velocity(this)
+            modalVelocity(this.frequencies, this.accelerations);
         end
 
     end
@@ -41,15 +32,15 @@ classdef SRS
 end
 
 %% HELPERS
-function [fig, axs] = generate_figure_axes(varargin)
+function [fig, axs] = plot_something(obj, varargin)
 
-narginchk(0, 1)
+narginchk(1, 2)
 
 switch nargin
-    case 0
+    case 1
         fig = figure;
         axs = axes('Parent', fig);
-    case 1
+    case 2
         axs = varargin{1};
 end
 

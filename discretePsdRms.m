@@ -1,4 +1,4 @@
-function rms = calculatePsdRms(frequency, psd) 
+function rms = discretePsdRms(frequency, psd) 
 %{ 
 WORKS FOR DISCRETE DATA ONLY. DO NOT RUN A SPEC THROUGH THIS...
 

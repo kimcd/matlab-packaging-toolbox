@@ -1,8 +1,8 @@
 function rms = calculatePsdRms(frequency, psd) 
 %{ 
+WORKS FOR DISCRETE DATA ONLY. DO NOT RUN A SPEC THROUGH THIS...
 
 Integration under PSD over the frequency range. 
-
 Returns rms. 
 
 Utilizes the trapezoidal rule, which works well for this application.

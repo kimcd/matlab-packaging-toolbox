@@ -1,4 +1,9 @@
 classdef SRS
+    % SRS class definition for an SRS object. Will perform basic plots for
+    %   analyzing an SRS. 
+    %
+    % C.Kim 23Nov2022 JHUAPL
+
 
     properties
         frequencies

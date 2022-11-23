@@ -18,7 +18,7 @@ AvValue = T.AvValue;
 MinVal = T.MinValue;
 MaxVal = T.MaxValue;
 Delta = T.Delta;
-
+asdfadsf
 %% Initialize Plot
 fig = figure;
 set(fig, 'Color', [1 1 1])

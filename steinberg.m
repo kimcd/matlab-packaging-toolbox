@@ -7,6 +7,9 @@ function z_inf = steinberg(...
 % STEINBERG returns the maximum (3-sig RMS) at the center of the PCB for
 %   component to withstand 20 million reversals. 
 %
+%   Inputs:
+%       component_factor - 
+%
 %   C.KIM 22Nov2022, JHUAPL
 %%
 STEINBERG_CONST = 0.00022;

@@ -1,6 +1,8 @@
 function out = modalVelocity(f_srs, g_srs)
-% MODALVELOCITY computes the modal velocity [ips] of an SRS given a 1xN
-%   array of SRS frequencies [Hz] and SRS accelerations [G]. 
+%MODALVELOCITY SRS modal velocity
+%   MODALVELOCITY(frequency, SRS) computes the modal velocity [ips] of an 
+%   SRS given a 1xN array of SRS frequencies [Hz] and SRS 
+%   accelerations [G]. 
 %
 %   C. Kim, 13Nov2022, JHUAPL
 %% Data validation

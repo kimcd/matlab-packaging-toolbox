@@ -1,4 +1,4 @@
-function rms = discretePsdRms(frequency, psd) 
+function rms = discrete_psd_rms(frequency, psd) 
 %DISCRETEPSDRMS rms of digital PSD data. 
 %   DISCRETEPSDRMS(frequency, psd) computes the RMS of discrete PSD data 
 %   using a cumulative trapezoidal formula to compute square root of the 

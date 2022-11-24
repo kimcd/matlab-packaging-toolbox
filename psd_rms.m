@@ -1,25 +1,25 @@
-function grms = psd_rms(f, asd)
-%PSDRMS rms of PSD.
-%   PSD_RMS(f, asd) computes the rms of a PSD (square root of the area
-%   under the PSD curve). 
-%
-%   This is GEVS spec: 
-%       f= [20 50 800 2000];
-%       asd = [.026 .16 .16 .026];
-%       psd_rms(f, asd) = 14.1
+function rms = psd_rms(frequency, psd) 
+%PSDRMS rms of digital PSD data. 
+%   PSDRMS(frequency, psd) computes the RMS of discrete PSD data 
+%   using a cumulative trapezoidal formula to compute square root of the 
+%   trapezoidal area under a PSD.
+%   Useful for computing the RMS of accelerometer data. 
 %
 %   C.Kim 23Nov2022 JHUAPL
-
 %%
-if numel(f) ~= numel(asd)
-    error('f and ASD must have the same dimensions.'); 
+if numel(frequency) ~= numel(psd) 
+    ME = MException('Dimensions must be equal.');
 end
 
-%%
-tot_area = 0; 
-for i = 1:numel(f)-1
-    area_i = asd_area(f(i), f(i+1), asd(i), asd(i+1));
-    tot_area = tot_area + area_i;
+area_under_curve = 0; 
+
+for i = 2:numel(frequency)
+
+    area_under_curve = area_under_curve...
+                       + (psd(i-1) + psd(i))... 
+                       * .5 * (frequency(i)...
+                       - frequency(i-1)); 
 end
 
-grms = sqrt(tot_area);
+rms = sqrt(area_under_curve); 
+

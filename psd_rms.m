@@ -19,6 +19,11 @@ for i = 2:numel(frequency)
                        + (psd(i-1) + psd(i))... 
                        * .5 * (frequency(i)...
                        - frequency(i-1)); 
+    if isnan(area_under_curve)
+        warning('NaN, %i', i)
+    end
+
+
 end
 
 rms = sqrt(area_under_curve); 

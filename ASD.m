@@ -33,8 +33,8 @@ classdef ASD
 
         end
 
-        function overlay(obj, axs, f, g) 
-            plot(axs, f, g, 'k--'); 
+        function h = overlay(obj, axs, f, g) 
+            h = plot(axs, f, g, 'k--'); 
         end
 
 

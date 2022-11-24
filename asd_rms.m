@@ -1,7 +1,7 @@
-function grms = psd_rms(f, asd)
-%PSDRMS rms of PSD.
-%   PSD_RMS(f, asd) computes the rms of a PSD (square root of the area
-%   under the PSD curve). 
+function grms = asd_rms(f, asd)
+%PSDRMS rms of ASD.
+%   ASD_RMS(f, asd) computes the rms of a ASD (square root of the area
+%   under the ASD curve). 
 %
 %   This is GEVS spec: 
 %       f= [20 50 800 2000];

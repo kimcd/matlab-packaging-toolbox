@@ -1,9 +1,7 @@
 classdef ASD
-% Functionality to add:
-%   - overlay another ASD object
-%
+% Function
+% overlay another ASD object
 % 
-%%
     properties
         f
         asd
@@ -13,9 +11,12 @@ classdef ASD
 
     methods
 
+
+
         function obj = ASD(f, asd)
             if numel(f) ~= numel(asd)
                 ME = MException('Dimensions must be equal.');
+
             end
 
             obj.f = f;
@@ -53,8 +54,7 @@ classdef ASD
 
             switch nargin
                 case 1
-                    fig = figure('units','normalized','outerposition',[0 0 1 1])
-                    %fig = figure;
+                    fig = figure;
                     axs = axes('Parent', fig);
                 case 2
                     axs = varargin{1};
@@ -69,7 +69,6 @@ classdef ASD
             plot(axs, obj.f, obj.asd, 'k');
             make_plot_log(axs);
             legend(axs, sprintf('%3.2f grms', obj.grms))
-            
 
             %             obj.plot_pretty_title(axs, ...
             %                 sprintf('Print paths for Slice %i', obj.id));

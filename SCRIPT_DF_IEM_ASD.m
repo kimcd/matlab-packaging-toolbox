@@ -1,6 +1,10 @@
 %SCRIPT_DF_IEM_ASD
 %   Rev A Spec
 
+clc
+clear all
+close all
+
 %% spec
 f = [20 35 200 300 500 700 800 925 2000]; 
 asd = [.01 .08 .08 .04 .04 .03 .06 .06 .013];

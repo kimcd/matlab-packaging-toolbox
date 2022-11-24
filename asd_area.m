@@ -1,5 +1,5 @@
 function area = asd_area(f1, f2, asd1, asd2)
-%ASD_AREA area under ASD.
+%ASD_AREA area under the curve connecting (f1, asd1) and (f2, asd2). 
 %   ASD_AREA(f1, f2, asd1, asd2) computes the area underneath (f1, asd1)
 %   and (f2, asd2). 
 %

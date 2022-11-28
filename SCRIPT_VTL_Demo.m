@@ -17,5 +17,5 @@ column_names = getColumnNames(T);
 freq = T.X_Data_Hz_; 
 asd = T.Control_g__Hz_; 
 test = ASD(freq, asd)
-test.plot_ASD
+h = test.plot_ASD
 psd_rms()

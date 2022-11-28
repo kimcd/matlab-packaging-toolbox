@@ -109,6 +109,7 @@ axs.YMinorGrid = 'on';
 axs.XMinorGrid = 'on';
 axs.XLim = [90 20000];
 axs.YLim = [0 2000];
+axs.YLim = [round(min())]
 axs.XLabel.String = 'Frequency $[Hz]$';
 axs.XLabel.FontSize = 18;
 axs.YLabel.String = 'SRS $[g]$';

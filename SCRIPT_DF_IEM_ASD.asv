@@ -24,28 +24,13 @@ horizontal_lines=iem_asd.overlay_horizontal(axs);
 %% overlay 3dB bands
 [f_plus, g_plus] = iem_asd.plus_db(3); 
 [f_min, g_min] = iem_asd.plus_db(-3); 
-plot(axs, f_plus, g_plus, 'r-.', "DisplayName", "+3dB")
-plot(axs, f_min, g_min, 'r--', "DisplayName", "-3dB")
+plot(axs, f_plus, g_plus, 'g', "DisplayName", "+3dB")
+plot(axs, f_min, g_min, 'r', "DisplayName", "-3dB")
 %iem_asd.overlay(gca, f_plus, g_plus)
 %iem_asd.overlay(gca, f_min, g_min)
 
-%% SRS object and plot
+%%
 f_srs = [100 2000 10000];
 g_srs = [7 1386 1386]; 
 
 iem_srs = SRS(f_srs, g_srs);    
-iem_srs.plot_SRS
-
-axs = gca;
-axs.XAxis.TickValues = f_srs;
-
-iem_srs.overlay_horizontal(axs)
-%axs.YLim = [round(min(g_srs), -2) round(max(g_srs), -2)]
-title(axs, "7511-9038, Rev. B, Max Expected Shock Environment for Components Mounted on Lander Side Panels")
-
-%%
-g_100_mv = iem_srs.compute_g_at_mv(100)
-plot(axs, f_srs, g_100_mv, 'r--', "DisplayName", '100 IPS')
-
-g_50_mv = iem_srs.compute_g_at_mv(50)
-plot(axs, f_srs, g_50_mv, '--', "DisplayName", '50 IPS', "Color", [0.9290 0.6940 0.1250])

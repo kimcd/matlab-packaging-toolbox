@@ -17,7 +17,7 @@ iem_asd = ASD(f, asd);
 [axs, h] = iem_asd.plot_ASD;
 fprintf('%3.2f\n', iem_asd.grms)
 title(axs, ...
-    "7511-9038, REV.B, ProtoFlight Random Vibration Levels for Lander Components Mounted on Y Panels and Z Deck 1min/axis")
+    "7511-9038, Rev. B, ProtoFlight Random Vibration Levels for Lander Components Mounted on Y Panels and Z Deck 1min/axis")
 %asd.overlay_gevs(gca)
 horizontal_lines=iem_asd.overlay_horizontal(axs);
 
@@ -49,3 +49,21 @@ plot(axs, f_srs, g_100_mv, 'r--', "DisplayName", '100 IPS')
 
 g_50_mv = iem_srs.compute_g_at_mv(50)
 plot(axs, f_srs, g_50_mv, '--', "DisplayName", '50 IPS', "Color", [0.9290 0.6940 0.1250])
+
+%%
+[filename, filedir] = uigetfile('*.txt');
+full_file = fullfile(filedir, filename);
+T = readtable(full_file);
+f = T.Var1; 
+g = T.Var2;
+fig = figure;
+axs = axes("Parent",fig); 
+h_plt = plot(axs, f, g, 'k-');
+grid(axs, 'on')
+g_label = unique(g);
+for i = 1:numel(g_label)
+    label = sprintf('%0.2f g', g_label(i));
+    yline(axs, g_label(i), '--', label)
+
+end
+

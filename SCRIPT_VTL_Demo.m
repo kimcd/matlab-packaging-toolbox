@@ -16,6 +16,10 @@ column_names = getColumnNames(T);
 % column_indices = getColumnIndices(LABELS, column_names);
 freq = T.X_Data_Hz_; 
 asd = T.Control_g__Hz_; 
-test = ASD(freq, asd)
+
+% instantiate ASD object
+test = ASD(freq, asd);
+
+
 h = test.plot_ASD
-psd_rms()
+%psd_rms()

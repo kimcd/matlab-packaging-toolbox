@@ -9,7 +9,7 @@
 full_file = fullfile(filedir, filename);
 
 %% Stuff data into Table
-T=readtable(full_file); 
+T = readtable(full_file); 
 
 %% Extract values
 iteration = T.Iteration;
@@ -18,12 +18,12 @@ AvValue = T.AvValue;
 MinVal = T.MinValue;
 MaxVal = T.MaxValue;
 Delta = T.Delta;
-asdfadsf
-%% Initialize Plot
+
+%% Initialize Plot and make pretty
 fig = figure;
 set(fig, 'Color', [1 1 1])
 axs = axes("Parent", fig);
-grid(axs, 'on'); 
+% grid(axs, 'on'); 
 grid(axs, 'minor');
 hold(axs, 'on');
 xlabel(axs, 'iteration'); 

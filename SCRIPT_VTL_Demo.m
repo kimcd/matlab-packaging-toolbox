@@ -1,5 +1,6 @@
 %SCRIPT_VTL_Demo
-
+% FOR FUTURE, VTL DATA WILL BE PROCESSED THROUGH AN OBJECT "PSD" WHILE ASD
+% WILL BE USED FOR SPECS. 
 %% 
 [filename, filedir] = uigetfile('*.xlsx');
 full_file = fullfile(filedir, filename);

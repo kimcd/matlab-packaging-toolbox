@@ -38,5 +38,6 @@ bar(axs, y)
 
 %% LEGEND FORMATTING
 legend('Cho-seal', 'Bare')
+%legend boxoff  % optional
 set([axs.Legend], ...
     'FontName', 'AvantGarde', 'Interpreter', 'latex');
